@@ -1,0 +1,5 @@
+#!/bin/sh
+
+chmod 0770 ${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}
+
+foot -f terminus-9 -s &

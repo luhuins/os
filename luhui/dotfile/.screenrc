@@ -1,0 +1,31 @@
+#
+#
+# xterm
+#
+#
+
+altscreen on
+# 允许加粗色彩
+attrcolor b ".I"
+# 告诉screen如何设置颜色。AB 指背景，AF 指前景
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# 使用当前背景色来显示删除的字符
+defbce on
+
+
+#
+#
+# 外观
+#
+#
+
+
+# TERM环境变量
+term screen-256color
+# 状态栏设定
+hardstatus off
+hardstatus alwayslastline
+# 状态栏设定
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W} %c %{g}]'
+# 禁用启动信息
+startup_message off

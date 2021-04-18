@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -u
+
+syncthing_confdir=${HOME}/.config/syncthing
+syncthing_datadir=${HOME}/syncthing
+
+guix environment --container \
+     --no-cwd \
+     --network \
+     --expose=/etc/ssl \
+     --ad-hoc curl nss-certs \
+     --ad-hoc syncthing \
+     --share=${syncthing_confdir} \
+     --share=${syncthing_datadir} \
+     -- syncthing \
+     
+

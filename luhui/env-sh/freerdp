@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -u
+
+POS=$(dirname $(realpath $0))
+
+freerdp_conf_dir=${HOME}/.config/freerdp/
+
+guix environment --container \
+     --no-cwd \
+     --network \
+     --ad-hoc glibc-utf8-locales ncurses \
+     --preserve=^TERM$ \
+     --preserve=^LANG$ \
+     --preserve=^GUIX_LOCPATH$ \
+     --share=${freerdp_conf_dir} \
+     --ad-hoc nss-certs curl \
+     --expose=/etc/ssl \
+     --preserve=^DISPLAY$ \
+     --share=/tmp/.X11-unix/X"$(echo ${DISPLAY} | tr -d ':')" \
+     --ad-hoc freerdp \
+     -- xfreerdp -clipboard "$@"

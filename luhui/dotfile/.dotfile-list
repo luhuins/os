@@ -1,0 +1,10 @@
+./.bash_profile
+./.bashrc
+./.config/hikari/autostart
+./.config/hikari/hikari.conf
+./.config/foot/foot.ini
+./.gitconfig
+./.screenrc
+./.tmux.conf
+./.uim
+./.vimrc

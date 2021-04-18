@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -u
+
+POS=$(dirname $(realpath $0))
+
+guix environment --container \
+     --no-cwd \
+     --network \
+     --link-profile \
+     --ad-hoc glibc-utf8-locales ncurses \
+     --preserve=^TERM$ \
+     --preserve=^LANG$ \
+     --preserve=^GUIX_LOCPATH$ \
+     --preserve=^WAYLAND_DISPLAY$ \
+     --preserve=^XDG_RUNTIME_DIR$ \
+     --share=${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY} \
+     --ad-hoc fontconfig font-gnu-unifont \
+     --ad-hoc zathura zathura-pdf-mupdf \
+     --share=${HOME}/.local/share/zathura \
+     --ad-hoc coreutils findutils \
+     ${@}
