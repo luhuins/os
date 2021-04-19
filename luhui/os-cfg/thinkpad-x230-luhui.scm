@@ -277,8 +277,6 @@
          "acpi_osi=\"!Windows 2012\"")   ; fn key
    os-kernel-arguments))
 
-(define-public thinkpad-x230-luhui:os-kernel linux-libre)
-
 (define-public thinkpad-x230-luhui:os
   (operating-system
     (timezone os-timezone)
