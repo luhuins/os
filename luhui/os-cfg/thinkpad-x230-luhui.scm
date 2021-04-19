@@ -169,10 +169,6 @@
    (list
     ;; VPN
     wireguard-tools
-    ;; 支持CJK显示的终端+字体
-    kmscon
-    ;; libvirt ssh 需要的依賴
-    netcat-openbsd
     ;; cpu 频率调整
     cpupower
     ;; btrfs
