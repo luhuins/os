@@ -2,6 +2,13 @@
 
 set -u
 
+
+if [ "$(id -u)" == "0" ]
+then
+	echo "is root user! DONT'RUN'THIS'SCRIPT"
+	exit 1
+fi
+
 THIS_DIR=$(dirname $(realpath ${0}))
 TARGET_DIR=${HOME}
 ITSELF=$(basename $(realpath ${0}))
