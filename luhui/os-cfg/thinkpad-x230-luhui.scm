@@ -103,6 +103,7 @@
              (network-manager-configuration
               (dns "none")))
     (service wpa-supplicant-service-type)
+    (bluetooth-service #:auto-enable? #t)
     (screen-locker-service hikari "hikari-unlocker")
     (screen-locker-service kbd "vlock")
     (service qemu-binfmt-service-type
