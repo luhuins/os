@@ -20,3 +20,7 @@ cd ${GUIX_USER_CONFIG_GIT_REPO}/luhui/manifests/
 guix build -m ${USER_NAME}.scm
 guix package -m ${USER_NAME}.scm
 cd ${CWD}
+
+cd ${GUIX_USER_CONFIG_GIT_REPO}/luhui/dotfile/
+sh deploy.sh
+cd ${CWD}
