@@ -36,7 +36,7 @@ for i in *
 do
 	if [ -e ${i}/.deploy_this_user.sh ]
 	then
-		su - ${i} -c "/bin/sh deploy_this_user.sh"
+		su - ${i} -c "/bin/sh ./.deploy_this_user.sh"
 	else
 		echo "user ${i} not have deploy_this_user.sh"
 	fi
