@@ -10,6 +10,7 @@
   #:use-module (gnu packages man)
   #:use-module (gnu packages texinfo)
   #:use-module (gnu packages scheme)
+  #:use-module (gnu packages mail)
   #:use-module ((luhui manifests guile-studio) #:prefix guile-studio:))
 
 (define-public guix-profile
@@ -25,7 +26,11 @@
    man-db
    man-pages
    texinfo
-   sicp)
+   sicp
+   ;; mail
+   mutt
+   msmtp
+   fdm)
   guile-studio:guix-profile))
 
 
