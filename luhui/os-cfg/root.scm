@@ -9,6 +9,7 @@
   #:use-module (gnu packages shellutils)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages certs)
+  #:use-module (gnu packages package-management)
   #:use-module (gnu services base)
   #:use-module (gnu services networking)
   #:use-module (gnu services linux))
@@ -54,6 +55,8 @@
     uim
     ;; 环境
     direnv
+    ;; dotfile
+    stow
     ;; 版本管理
     git
     nss-certs)
