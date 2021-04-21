@@ -107,13 +107,6 @@
     (bluetooth-service #:auto-enable? #t)
     (screen-locker-service hikari "hikari-unlocker")
     (screen-locker-service kbd "vlock")
-    (service guix-publish-service-type
-             (guix-publish-configuration
-              (host "0.0.0.0")
-              (port 8090)
-              (compression '(("zstd" 3)))
-              (workers 4)
-              (advertise? #t)))
     (service avahi-service-type
              (avahi-configuration
               (wide-area? #t)))
@@ -127,11 +120,9 @@
     (service tlp-service-type
              (tlp-configuration
               (tlp-default-mode "BAT")
-              (cpu-scaling-governor-on-ac (list "ondemand"))
+              (cpu-scaling-governor-on-ac (list "powersave"))
               (cpu-scaling-governor-on-bat (list "powersave"))
               (sched-powersave-on-bat? #t)
-              (sata-linkpwr-on-ac "min_power")
-              (sata-linkpwr-on-bat "min_power")
               (nmi-watchdog? #t)))
     (service dnsmasq-service-type
              (dnsmasq-configuration
