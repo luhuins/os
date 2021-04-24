@@ -37,7 +37,7 @@ alias rm='rm -i'
 # ssh-agent
 if [ -e ${HOME}/.ssh-agent ]
 then
-	. ${HOME}/.ssh-agent
+    . ${HOME}/.ssh-agent
 fi
 
 # 全员wayland
@@ -46,30 +46,31 @@ export GDK_BACKEND=wayland
 export QT_QPA_PLATFORM=wayland
 export MOZ_ENABLE_WAYLAND=1
 
-# 设备特定配置
+# 用户特定配置
 if [ -e ${HOME}/.bashrc.user ]
 then
-	. ${HOME}/.bashrc.user
+    . ${HOME}/.bashrc.user
 fi
 
-# same group's user can access this wayland server
+# 同一个用户组的用户可以访问luhui的Wayland Server
 if [ $(id -u -n) == "luhui" ]
 then
-	mkdir -p /tmp/user
-	chmod 0770 /tmp/user
-	export XDG_RUNTIME_DIR=/tmp/user/luhui
-	mkdir -p /tmp/user/luhui
-	chmod 0770 /tmp/user/luhui
+    mkdir -p /tmp/user
+    chmod 0770 /tmp/user
+    export XDG_RUNTIME_DIR=/tmp/user/luhui
+    mkdir -p /tmp/user/luhui
+    chmod 0770 /tmp/user/luhui
 else
-	if [ -z ${XDG_RUNTIME_DIR} ]
-        then
-                export XDG_RUNTIME_DIR=/tmp/xdg_runtime_dir-$(id -u)/
-        fi
-        mkdir -p ${XDG_RUNTIME_DIR}
-	export WAYLAND_DISPLAY="wayland-0"
-	ln -sf /tmp/user/luhui/wayland-0 ${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}
+    if [ -z ${XDG_RUNTIME_DIR} ]
+    then
+        export XDG_RUNTIME_DIR=/tmp/xdg_runtime_dir-$(id -u)/
+    fi
+    mkdir -p ${XDG_RUNTIME_DIR}
+    export WAYLAND_DISPLAY="wayland-0"
+    ln -sf /tmp/user/luhui/wayland-0 ${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}
 fi
 
+# 如果拥有emacs则设定EDITOR为emacs
 if (type emacsclient &> /dev/null)
 then
     export EDITOR='emacsclient -nw'
@@ -77,9 +78,12 @@ else
     export EDITOR='vi'
 fi
 
-if [ -e ${HOME}/.bin/ ]
+# 打印用户的 MOTD
+if [ -e ${HOME}/.motd ]
 then
-	export PATH="${PATH}:${HOME}/.bin/"
+    cat ${HOME}/.motd
+    printf "\n"
 fi
 
 eval "$(direnv hook bash)"
+
