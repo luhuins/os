@@ -13,6 +13,7 @@
   #:use-module (gnu packages admin)
   #:use-module (gnu packages cryptsetup)
   #:use-module (gnu packages ncurses)
+  #:use-module (gnu packages radio)
   #:use-module (gnu services ssh)
   #:use-module (gnu services networking)
   #:use-module (gnu services linux)
@@ -151,7 +152,8 @@
     (service brightness-service-type
              (brightness-configuration
               (suffix "builtin-screen")
-              (device "intel_backlight"))))
+              (device "intel_backlight")))
+    (udev-rules-service 'rtl-sdr rtl-sdr))
    (modify-services
        os-services
      (guix-service-type
@@ -271,7 +273,8 @@
 (define-public thinkpad-x230-luhui:os-kernel-arguments
   (append
    (list "acpi_backlight=vendor"         ; fn key
-         "acpi_osi=\"!Windows 2012\"")   ; fn key
+         "acpi_osi=\"!Windows 2012\""    ; fn key
+         "modprobe.blacklist=dvb_usb_rtl28xxu")   ; rtl-sdr
    os-kernel-arguments))
 
 (define-public thinkpad-x230-luhui:os
