@@ -276,12 +276,10 @@
 
 (define-public thinkpad-x230-luhui:os
   (operating-system
-    (timezone os-timezone)
-    (locale os-locale)
-    (kernel-arguments thinkpad-x230-luhui:os-kernel-arguments)
+    (inherit root:os)
     (kernel thinkpad-x230-luhui:os-kernel)
+    (kernel-arguments thinkpad-x230-luhui:os-kernel-arguments)
     (firmware thinkpad-x230-luhui:os-firmware)
-    (issue os-issue)
     (host-name thinkpad-x230-luhui:os-host-name)
     (services thinkpad-x230-luhui:os-services)
     (packages thinkpad-x230-luhui:os-packages)
