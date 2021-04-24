@@ -29,3 +29,11 @@ hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W} %c %{g}]'
 # 禁用启动信息
 startup_message off
+
+
+#
+#
+# misc
+#
+#
+vbell on
