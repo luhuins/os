@@ -24,7 +24,7 @@ defbce on
 term screen-256color
 # 状态栏设定
 hardstatus off
-hardstatus alwayslastline
+hardstatus alwaysfirstline
 # 状态栏设定
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W} %c %{g}]'
 # 禁用启动信息
