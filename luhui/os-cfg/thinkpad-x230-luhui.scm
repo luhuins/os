@@ -14,6 +14,7 @@
   #:use-module (gnu packages cryptsetup)
   #:use-module (gnu packages ncurses)
   #:use-module (gnu packages radio)
+  #:use-module (gnu packages glib)
   #:use-module (gnu services ssh)
   #:use-module (gnu services networking)
   #:use-module (gnu services linux)
@@ -181,7 +182,11 @@
     ;; battery
     acpi
     ;; ncurses, clear command
-    ncurses)
+    ncurses
+    ;; bluetooth
+    bluez dbus
+    ;; alsa
+    alsa-utils)
    os-packages))
 
 
