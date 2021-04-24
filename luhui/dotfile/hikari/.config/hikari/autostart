@@ -2,4 +2,4 @@
 
 chmod 0770 ${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}
 
-foot -f terminus-9 -s &
+foot -f terminus-9 -W 80x27 -s &
