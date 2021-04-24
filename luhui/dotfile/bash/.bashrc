@@ -70,7 +70,12 @@ else
 	ln -sf /tmp/user/luhui/wayland-0 ${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}
 fi
 
-
+if (type emacsclient &> /dev/null)
+then
+    export EDITOR='emacsclient -nw'
+else
+    export EDITOR='vi'
+fi
 
 if [ -e ${HOME}/.bin/ ]
 then
