@@ -49,7 +49,7 @@
    nss-certs)) ; TLS 证书
 
 ;; dummy bootloder config
-(define os-bootloader
+(define-public os-bootloader
   (bootloader-configuration
    (bootloader grub-bootloader)
    (target "nodev")
