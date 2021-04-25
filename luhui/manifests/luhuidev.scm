@@ -11,6 +11,10 @@
   #:use-module (gnu packages texinfo)
   #:use-module (gnu packages scheme)
   #:use-module (gnu packages mail)
+  #:use-module (gnu packages commencement)
+  #:use-module (gnu packages llvm)
+  #:use-module (gnu packages gdb)
+  #:use-module (gnu packages code)
   #:use-module ((luhui manifests guile-studio) #:prefix guile-studio:))
 
 (define-public guix-profile
@@ -30,7 +34,12 @@
    ;; mail
    mutt
    msmtp
-   fdm)
+   fdm
+   ;; c
+   gcc-toolchain
+   clang-toolchain
+   gdb
+   global)
   guile-studio:guix-profile))
 
 
