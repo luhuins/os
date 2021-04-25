@@ -197,7 +197,7 @@
       (mount-point "/")
       (device "/dev/mapper/cryptroot-lenovo-100schromebook-luhui")
       (type "btrfs")
-      (options "compress-force=zstd:15")
+      (options "compress-force=zstd")
       (check? #t)))
    %base-file-systems))
 
@@ -230,12 +230,10 @@
 
 (define-public lenovo-100schromebook-luhui:os
   (operating-system
-    (timezone os-timezone)
-    (locale os-locale)
+    (inherit root:os)
     (kernel-arguments lenovo-100schromebook-luhui:os-kernel-arguments)
     (kernel lenovo-100schromebook-luhui:os-kernel)
     (firmware lenovo-100schromebook-luhui:os-firmware)
-    (issue os-issue)
     (host-name lenovo-100schromebook-luhui:os-host-name)
     (services lenovo-100schromebook-luhui:os-services)
     (packages lenovo-100schromebook-luhui:os-packages)
