@@ -3,5 +3,12 @@
 (load-file (concat cfg-load-path "/mail.el"))
 (load-file (concat cfg-load-path "/paredit.el"))
 
+(defun dev-setup ()
+  (load-file (concat cfg-load-path "/gtags.el")))
 (if (string-equal (getenv "USER") "luhuidev")
-    (load-file (concat cfg-load-path "/gtags.el")))
+    (dev-setup))
+
+(defun web-setup ()
+  (load-file (concat cfg-load-path "/w3m.el")))
+(if (string-equal (getenv "USER") "luhuiweb")
+    (web-setup))
