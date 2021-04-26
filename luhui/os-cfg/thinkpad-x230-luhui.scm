@@ -154,7 +154,8 @@
              (brightness-configuration
               (suffix "builtin-screen")
               (device "intel_backlight")))
-    (udev-rules-service 'rtl-sdr rtl-sdr))
+    (udev-rules-service 'rtl-sdr rtl-sdr)
+    (service ipfs-service-type))
    (modify-services
        os-services
      (guix-service-type
@@ -194,7 +195,9 @@
 (define-public thinkpad-x230-luhui:os-bootloader
   (bootloader-configuration
    (bootloader grub-bootloader)
-   (target "/dev/sda")))
+   (target "/dev/sda")
+   (terminal-outputs '(vga_text console serial gfxterm))
+   (terminal-inputs '(at_keyboard usb_keyboard console serial))))
 
 
 (define-public thinkpad-x230-luhui:os-mapped-devices
@@ -282,9 +285,13 @@
          "modprobe.blacklist=dvb_usb_rtl28xxu")   ; rtl-sdr
    os-kernel-arguments))
 
+(define-public thinkpad-x230-luhui:os-keyboard-layout
+  (keyboard-layout "us" #:options '("ctrl:nocaps")))
+
 (define-public thinkpad-x230-luhui:os
   (operating-system
     (inherit root:os)
+    (keyboard-layout thinkpad-x230-luhui:os-keyboard-layout)
     (kernel thinkpad-x230-luhui:os-kernel)
     (kernel-arguments thinkpad-x230-luhui:os-kernel-arguments)
     (firmware thinkpad-x230-luhui:os-firmware)
