@@ -55,6 +55,7 @@
     uim
     ;; 环境
     direnv
+    gwl
     ;; dotfile
     stow
     ;; 版本管理
