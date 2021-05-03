@@ -156,6 +156,9 @@
              (brightness-configuration
               (suffix "builtin-screen")
               (device "intel_backlight")))
+    (service thinkpad-fan-service-type
+             (thinkpad-fan-configuration
+              (speed "7"))) ; max speed :)
     (udev-rules-service 'rtl-sdr rtl-sdr)
     (service ipfs-service-type))
    (modify-services
