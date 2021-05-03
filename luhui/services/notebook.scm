@@ -91,11 +91,12 @@
   thinkpad-fan-configuration make-thinkpad-fan-configuration
   thinkpad-fan-configuration?
   (speed thinkpad-fan-configuration-speed
-         (default "auto")))
+         (default "auto"))) ; string:  0-7 | auto
 
 (define thinkpad-fan-shepherd-service
   (lambda (config)
     (let* ((speed (thinkpad-fan-configuration-speed config))
+           (speed-command (string-append "level" " " speed))
            (level-control-file ; 控制风扇的文件
             "/proc/acpi/ibm/fan"))
       (shepherd-service
@@ -105,7 +106,7 @@
         #~(lambda _
             (call-with-output-file #$level-control-file
               (lambda (level-control-port)
-                (format level-control-port speed)))))
+                (format level-control-port #$speed-command)))))
        (modules `((rnrs io ports)
                   ,@%default-modules))))))
 
