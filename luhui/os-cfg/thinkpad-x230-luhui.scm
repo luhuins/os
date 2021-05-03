@@ -15,6 +15,7 @@
   #:use-module (gnu packages ncurses)
   #:use-module (gnu packages radio)
   #:use-module (gnu packages glib)
+  #:use-module (gnu packages ssh)
   #:use-module (gnu services ssh)
   #:use-module (gnu services networking)
   #:use-module (gnu services linux)
@@ -88,6 +89,7 @@
     (service earlyoom-service-type)
     (service openssh-service-type
              (openssh-configuration
+              (openssh openssh-sans-x)
               (port-number 222)
               (password-authentication? #f)))
     (service nftables-service-type
