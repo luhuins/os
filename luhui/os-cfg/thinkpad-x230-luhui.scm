@@ -287,6 +287,7 @@
   (append
    (list "acpi_backlight=vendor"         ; fn key
          "acpi_osi=\"!Windows 2012\""    ; fn key
+         "thinkpad_acpi.fan_control=1"   ; fan control
          "modprobe.blacklist=dvb_usb_rtl28xxu")   ; rtl-sdr
    os-kernel-arguments))
 

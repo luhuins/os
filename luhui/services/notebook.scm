@@ -82,6 +82,8 @@
                    ,@%default-modules)))))
    (description "save & restore on service start/stop")))
 
+
+;; 不起作用, need fix
 (define %thinkpad-fan-device-config
   `("modprobe.d/thinkpad-fan.conf"
     ,(plain-file "thinkpad-fan.conf"
