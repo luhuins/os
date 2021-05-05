@@ -9,6 +9,9 @@
   #:use-module (gnu packages w3m)
   #:use-module (gnu packages web-browsers)
   #:use-module (gnu packages emacs-xyz)
+  #:use-module (gnu packages ed)
+  #:use-module (gnu packages dictionaries)
+  #:use-module (luhui pkgs stardict)
   #:use-module ((luhui manifests wayland) #:prefix wayland:)
   #:use-module ((luhui manifests guile-studio) #:prefix guile-studio:))
 
@@ -18,7 +21,10 @@
    tmux        ; bsd tmux
    screen      ; gnu screen
    icecat      ; icecat
-   ungoogled-chromium/wayland) ; ungoogled-chromium
+   ungoogled-chromium/wayland  ; ungoogled-chromium
+   ed                   ; editor
+   sdcv                 ; dict
+   stardict-ecdict)     ; dict data
   wayland:guix-profile
   (list
    curl

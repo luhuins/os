@@ -15,6 +15,9 @@
   #:use-module (gnu packages aidc)
   #:use-module (gnu packages shellutils)
   #:use-module (luhui pkgs uim)
+  #:use-module (gnu packages ed)
+  #:use-module (gnu packages dictionaries)
+  #:use-module (luhui pkgs stardict)
   #:use-module ((luhui manifests guile-studio) #:prefix guile-studio:)
   #:use-module ((luhui manifests wayland) #:prefix wayland:))
 
@@ -34,7 +37,10 @@
    uim-console ; console zh input method
    rsync       ; file sync
    direnv      ; direnv
-   mosh)       ; use for shanghai.guix.org.cn
+   mosh        ; use for shanghai.guix.org.cn
+   ed          ; editor
+   sdcv        ; dict
+   stardict-ecdict)  ; dict data
   wayland:guix-profile
   guile-studio:guix-profile))
 

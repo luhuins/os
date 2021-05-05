@@ -15,6 +15,9 @@
   #:use-module (gnu packages llvm)
   #:use-module (gnu packages gdb)
   #:use-module (gnu packages code)
+  #:use-module (gnu packages dictionaries)
+  #:use-module (luhui pkgs stardict)
+  #:use-module (gnu packages ed)
   #:use-module ((luhui manifests guile-studio) #:prefix guile-studio:))
 
 (define-public guix-profile
@@ -26,6 +29,9 @@
    qemu        ; virtual machine
    openssh     ; remote control
    file        ; file format
+   ed ; editor
+   sdcv ; dict
+   stardict-ecdict ; dict data
    ;; doc
    man-db
    man-pages
