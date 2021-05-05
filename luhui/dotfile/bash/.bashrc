@@ -85,5 +85,11 @@ then
     printf "\n"
 fi
 
+if [ -e ${HOME}/.scripts ]
+then
+    export PATH=${HOME}/.scripts:${PATH}
+fi
+
+
 eval "$(direnv hook bash)"
 

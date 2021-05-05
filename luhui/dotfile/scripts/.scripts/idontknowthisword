@@ -1,0 +1,10 @@
+#!/bin/sh
+
+PROMPT="input> "
+
+while true
+do
+    read -p ${PROMPT}
+    sdcv ${REPLY}
+    espeak ${REPLY}
+done
