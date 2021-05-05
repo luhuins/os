@@ -18,6 +18,7 @@
   #:use-module (gnu packages dictionaries)
   #:use-module (luhui pkgs stardict)
   #:use-module (gnu packages ed)
+  #:use-module (gnu packages speech)
   #:use-module ((luhui manifests guile-studio) #:prefix guile-studio:))
 
 (define-public guix-profile
@@ -32,6 +33,7 @@
    ed ; editor
    sdcv ; dict
    stardict-ecdict ; dict data
+   espeak ; english speech
    ;; doc
    man-db
    man-pages

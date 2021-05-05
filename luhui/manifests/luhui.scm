@@ -18,6 +18,7 @@
   #:use-module (gnu packages ed)
   #:use-module (gnu packages dictionaries)
   #:use-module (luhui pkgs stardict)
+  #:use-module (gnu packages speech)
   #:use-module ((luhui manifests guile-studio) #:prefix guile-studio:)
   #:use-module ((luhui manifests wayland) #:prefix wayland:))
 
@@ -40,6 +41,7 @@
    mosh        ; use for shanghai.guix.org.cn
    ed          ; editor
    sdcv        ; dict
+   espeak ; english speech
    stardict-ecdict)  ; dict data
   wayland:guix-profile
   guile-studio:guix-profile))

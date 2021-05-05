@@ -12,6 +12,7 @@
   #:use-module (gnu packages ed)
   #:use-module (gnu packages dictionaries)
   #:use-module (luhui pkgs stardict)
+  #:use-module (gnu packages speech)
   #:use-module ((luhui manifests wayland) #:prefix wayland:)
   #:use-module ((luhui manifests guile-studio) #:prefix guile-studio:))
 
@@ -24,7 +25,8 @@
    ungoogled-chromium/wayland  ; ungoogled-chromium
    ed                   ; editor
    sdcv                 ; dict
-   stardict-ecdict)     ; dict data
+   stardict-ecdict     ; dict data
+   espeak) ; english speech
   wayland:guix-profile
   (list
    curl
