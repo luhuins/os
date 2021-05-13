@@ -2,6 +2,7 @@
   #:use-module (guix profiles)
   #:use-module (gnu packages)
   #:use-module (gnu packages emacs)
+  #:use-module (luhui pkgs emacs-xyz)
   #:use-module (gnu packages emacs-xyz)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages guile)
@@ -14,7 +15,7 @@
 (define-public guix-profile
    (list
     emacs-next-pgtk
-    emacs-rime
+    emacs-rime-fix
     emacs-magit git
     emacs-paredit
     guile-3.0 guix 

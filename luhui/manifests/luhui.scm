@@ -3,7 +3,6 @@
   #:use-module (gnu packages)
   #:use-module (gnu packages tmux)
   #:use-module (gnu packages screen)
-  #:use-module (gnu packages vim)
   #:use-module (gnu packages emacs)
   #:use-module (gnu packages emacs-xyz)
   #:use-module (gnu packages ncurses)
@@ -27,7 +26,6 @@
   (list
    tmux        ; bsd tmux
    screen      ; gnu screen
-   vim         ; editor
    ncurses     ; clear command
    openssh     ; ssh
    password-store ; password manager
