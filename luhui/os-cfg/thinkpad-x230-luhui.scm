@@ -160,7 +160,17 @@
              (thinkpad-fan-configuration
               (speed "7"))) ; max speed :)
     (udev-rules-service 'rtl-sdr rtl-sdr)
-    (service ipfs-service-type))
+    (service ipfs-service-type)
+    (service libvirt-service-type
+             (libvirt-configuration
+              (unix-sock-group "libvirt")))
+    (service virtlog-service-type
+             (virtlog-configuration
+              (log-outputs "2:syslog:virtlog")))
+    (service hurd-vm-service-type
+             (hurd-vm-configuration
+              (disk-size (* 5000 (expt 2 20)))
+              (memory-size 512))))
    (modify-services
        os-services
      (guix-service-type
