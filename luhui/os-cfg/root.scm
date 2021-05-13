@@ -4,7 +4,6 @@
   #:use-module (gnu packages linux)
   #:use-module (gnu packages tmux)
   #:use-module (gnu packages screen)
-  #:use-module (gnu packages vim)
   #:use-module (gnu packages xorg)
   #:use-module (gnu packages shellutils)
   #:use-module (gnu packages version-control)
@@ -49,8 +48,6 @@
     ;; 终端复用器
     tmux
     screen
-    ;; 编辑器
-    vim
     ;; 输入法
     uim
     ;; 环境
