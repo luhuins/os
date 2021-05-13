@@ -1,15 +1,17 @@
 #!/bin/sh
 
 PROMPT="input> "
+HISTORY_FILE="${HOME}/.idktw.history"
 
 while true
 do
     REPLY=""
-    read -p ${PROMPT}
-    if [ -z ${REPLY} ]
+    read -p "${PROMPT}"
+    if [ -z "${REPLY}" ]
     then
 	continue
     fi
-    sdcv ${REPLY}
-    espeak ${REPLY}
+    printf "%s\n" ${REPLY} >> ${HISTORY_FILE}
+    sdcv "${REPLY}"
+    espeak "${REPLY}"
 done
